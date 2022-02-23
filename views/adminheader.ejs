@@ -1,0 +1,49 @@
+
+<!-- start navigation -->
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon icon-bar"></span>
+                <span class="icon icon-bar"></span>
+                <span class="icon icon-bar"></span>
+            </button>
+            <a href="#" class="navbar-brand">Awesome</a>
+            
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+               
+                <li><a href="/">ADMIN HOME</a></li>
+                <li><a href="/admin/manageuser">MANAGEUSERS</a></li>
+                <!--<li><a href="team">TEAM</a></li>-->
+                <li>
+                    <a href="/" class="nav-link dropdown-toggle" data-toggle="dropdown">SETTING</a>
+                    <div class="dropdown-menu">
+                        <a href="/admin/cpadmin" class="dropdown-item">CHANGE PASSWORD</a>
+                        <a href="/admin/epadmin" class="dropdown-item">EDIT PROFILE</a>
+                    </div>
+                </li>
+                
+                <li><a href="" onclick="logout()">LOGOUT</a></li>
+                <script>
+                    function logout()
+                        {
+                            var out =confirm("Are you Sure To Logout!");
+                            if (out)
+                            {
+                                //write redirection code
+                               // window.location = 'http://localhost:3002/login';
+                               location.href = "/login"
+                            }
+    
+                        }
+                </script>
+               
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- end navigation -->
+<font color="white"><b>Welcome admin :<br><%= sunm %></b></font>

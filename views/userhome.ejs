@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<!-- 
+        Awesome Template
+        http://www.templatemo.com/preview/templatemo_450_awesome
+        -->
+		<title>Awesome Responsive Website</title>
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<!-- css file start -->
+		<%-include ('link.ejs') %>
+    	<!--css file end -->
+
+        <!-- script file start -->
+		<%-include ('script.ejs') %>
+    	<!--script file end -->
+		
+	</head>
+	<body id="top">
+
+		<!-- start preloader -->
+		<%-include ('loader.ejs') %>
+    	<!-- end preloader -->
+
+         <!-- start header -->
+        <%-include ('header.ejs') %>
+         <!-- end header -->
+
+    	<!-- start navigation -->
+		<%-include ('userheader.ejs') %>
+		<!-- end navigation -->
+		<font color="white"><b>Welcome admin :<br><%= sunm %></b></font>
+    	<section id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="wow bounceIn" data-wow-offset="50" data-wow-delay="0.3s">Welcome To <span>USER PANEL</span></h2>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    	<!-- start copyright -->
+        <%-include ('copyright.ejs')%>
+        <!-- end copyright -->
+
+	</body>
+</html>

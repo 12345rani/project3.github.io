@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<!-- 
+        Awesome Template
+        http://www.templatemo.com/preview/templatemo_450_awesome
+        -->
+		<title>Awesome Responsive Website</title>
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<!-- css file start -->
+		<link rel="stylesheet" href="../css/animate.min.css">
+		<link rel="stylesheet" href="../css/bootstrap.min.css">
+		<link rel="stylesheet" href="../css/font-awesome.min.css">
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="../css/templatemo-style.css">
+    	<!--css file end -->
+
+        <!-- script file start -->
+        <script src="../js/jquery.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
+        <script src="../js/jquery.singlePageNav.min.js"></script>
+		<script src="../js/typed.js"></script>
+		<script src="../js/wow.min.js"></script>
+		<script src="../js/custom.js"></script>
+    	<!--script file end -->
+		
+	</head>
+	<body id="top">
+
+		<!-- start preloader -->
+		<%-include ('loader.ejs') %>
+    	<!-- end preloader -->
+
+         <!-- start header -->
+        <%-include ('header.ejs') %>
+         <!-- end header -->
+
+    	<!-- start navigation -->
+		<%-include ('userheader.ejs') %>
+		<!-- end navigation -->
+		
+    	<section id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="wow bounceIn" data-wow-offset="50" data-wow-delay="0.3s">Raise funds here <span>for charity...</span></h2>
+                    </div>
+                    <div class="col-md-12">
+                        <h2 class="wow bounceIn" data-wow-offset="50" data-wow-delay="0.3s">Make Payment of  <span>&#8377 100 for charity....</span></h2>
+                    </div>
+                    <div class="col-md-12">
+                        <!-- PayPal payment form for displaying the buy button -->
+<form action="<%= PAYPAL_URL %>" method="post">
+    <!-- Identify your business so that you can collect the payments. -->
+    <input type="hidden" name="business" value="<%= PAYPAL_ID %>">
+    
+    <!-- Specify a Buy Now button. -->
+    <input type="hidden" name="cmd" value="_xclick">
+    
+    <!-- Specify details about the item that buyers will purchase. -->
+    <input type="hidden" name="item_name" value="Service charge">
+    <input type="hidden" name="item_number" value="">
+    <input type="hidden" name="amount" value="100">
+    <input type="hidden" name="currency_code" value="USD">
+    
+    <!-- Specify URLs -->
+    <input type="hidden" name="return" value="http://localhost:3002/user/payment?uid=<%= sunm %>&amount=100">
+    <input type="hidden" name="cancel_return" value="http://localhost:3002/user/cancel">
+    
+    <!-- Display the payment button. -->
+    <input type="image" name="submit" border="0" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif">
+</form>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    	<!-- start copyright -->
+        <%-include ('copyright.ejs')%>
+        <!-- end copyright -->
+
+	</body>
+</html>

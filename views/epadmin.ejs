@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<!-- 
+        Awesome Template
+        http://www.templatemo.com/preview/templatemo_450_awesome
+        -->
+		<title>Awesome Responsive Website</title>
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<!-- css file start -->
+		<link rel="stylesheet" href="../css/animate.min.css">
+		<link rel="stylesheet" href="../css/bootstrap.min.css">
+		<link rel="stylesheet" href="../css/font-awesome.min.css">
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="../css/templatemo-style.css">
+    	<!--css file end -->
+
+        <!-- script file start -->
+        <script src="../js/jquery.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
+        <script src="../js/jquery.singlePageNav.min.js"></script>
+		<script src="../js/typed.js"></script>
+		<script src="../js/wow.min.js"></script>
+		<script src="../js/custom.js"></script>
+    	<!--script file end -->
+		
+	</head>
+	<body>
+
+		<!-- start preloader -->
+		<%-include ('loader.ejs') %>
+    	<!-- end preloader -->
+
+         <!-- start header -->
+        <%-include ('header.ejs') %>
+         <!-- end header -->
+<!-- start navigation -->
+
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container">
+      <div class="navbar-header">
+          <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="icon icon-bar"></span>
+              <span class="icon icon-bar"></span>
+              <span class="icon icon-bar"></span>
+          </button>
+          <a href="/" class="navbar-brand">Awesome</a>
+      </div>
+      <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+              <li><a href="/admin">ADMIN HOME</a></li>
+              <li><a href="/admin/manageuser">MANAGEUSERS</a></li>
+              <li><a href="/login">LOGOUT</a></li>
+              
+          </ul>
+      </div>
+  </div>
+</nav>
+<!-- end navigation -->
+
+         <font color="white">Welcome admin : <br /><%= sunm %> </font>
+    	
+
+    <div class="section-header text-left">
+      <h1>Edit Profile!!!</h1>
+      <font color="blue"><%= output %></font>
+      <form method="post" action="/admin/epadmin">
+          <div class="form-group">
+            <label>Name</label>
+            <input type="text" class="form-control" name="name" 
+            value="<%= userDetails.name %>">
+          </div>
+          <div class="form-group">
+              <label>Username</label>
+              <input onkeyup="checkEmail(this.value)" readonly type="email" class="form-control" name="email" 
+              value="<%= userDetails.email %>">
+              <span id="response"></span>
+          </div>
+          
+          <div class="form-group">
+              <label>Mobile</label>
+              <input type="text" class="form-control" name="mobile" 
+              value="<%= userDetails.mobile %>">
+            </div>
+          <div class="form-group">
+              <label>Address</label>
+              <textarea rows="5" class="form-control" name="address"><%= userDetails.address %></textarea>
+          </div>
+          <div class="form-group">
+              <label>City</label>
+              <select class="form-control" name="city">
+              <option><%= userDetails.city %></option>
+              <option>Indore</option>
+              <option>Bhopal</option>
+              <option>Ujjain</option>
+              </select>
+          </div>
+          <div class="form-group">
+              <label>Gender</label>
+              Male <input type="radio"  name="gender" value="male"<%=m%>>
+               &nbsp;&nbsp;
+              Female <input type="radio"  name="gender" value="female"<%=f%>>
+            </div>
+          <button type="submit" class="btn btn-success">update</button>
+        </form>     
+  
+  </div>
+                              
+  
+
+    	<!-- start copyright -->
+        <%-include ('copyright.ejs')%>
+        <!-- end copyright -->
+
+	</body>
+</html>

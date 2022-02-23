@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<!-- 
+        Awesome Template
+        http://www.templatemo.com/preview/templatemo_450_awesome
+        -->
+		<title>Awesome Responsive Website</title>
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<!-- css file start -->
+		<%-include ('link.ejs') %>
+    	<!--css file end -->
+
+        <!-- script file start -->
+		<%-include ('script.ejs') %>
+    	<!--script file end -->
+		
+	</head>
+	<body id="top">
+
+		<!-- start preloader -->
+		<%-include ('loader.ejs') %>
+    	<!-- end preloader -->
+
+         <!-- start header -->
+        <%-include ('header.ejs') %>
+         <!-- end header -->
+
+    	<!-- start navigation -->
+		<%-include ('navigation.ejs') %>
+		<!-- end navigation -->
+
+    	<!-- start contact -->
+<section id="contact">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h2 class="wow bounceIn" data-wow-offset="50" data-wow-delay="0.3s">CONTACT <span>AWESOME</span></h2>
+			</div>
+			<div class="col-md-6 col-sm-6 col-xs-12 wow fadeInLeft" data-wow-offset="50" data-wow-delay="0.9s">
+				<form action="#" method="post">
+					<label>NAME</label>
+					<input name="fullname" type="text" class="form-control" id="fullname">
+						 
+					<label>EMAIL</label>
+					<input name="email" type="email" class="form-control" id="email">
+						 
+					<label>MESSAGE</label>
+					<textarea name="message" rows="4" class="form-control" id="message"></textarea>
+					
+					<input type="submit" class="form-control">
+				</form>
+			</div>
+			<div class="col-md-6 col-sm-6 col-xs-12 wow fadeInRight" data-wow-offset="50" data-wow-delay="0.6s">
+				<address>
+					<p class="address-title">OUR ADDRESS</p>
+					<span>Lorem ipsum dolor sit amet, consectetur adipiscing elitquisque tempus ac eget diam et laoreet phasellus ut nisi id leo molestie.</span>
+					<p><i class="fa fa-phone"></i> +91 94884 87853</p>
+					<p><i class="fa fa-envelope-o"></i> giridesigns5@gmail.com</p>
+					<p><i class="fa fa-map-marker"></i> 50, Thiruvoodal Street, Thiruvannamalai - 606 601.</p>
+				</address>
+				<ul class="social-icon">
+					<li><h4>WE ARE SOCIAL</h4></li>
+					<li><a href="#" class="fa fa-facebook"></a></li>
+					<li><a href="#" class="fa fa-twitter"></a></li>
+					<li><a href="https://www.youtube.com/channel/UC4yzoGuKkCL_8FzI-B-x83A" class="fa fa-youtube"></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- end contact -->
+
+    	<!-- start copyright -->
+        <%-include ('copyright.ejs')%>
+        <!-- end copyright -->
+
+	</body>
+</html>

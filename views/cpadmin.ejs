@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<!-- 
+        Awesome Template
+        http://www.templatemo.com/preview/templatemo_450_awesome
+        -->
+		<title>Awesome Responsive Website</title>
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<!-- css file start -->
+		<link rel="stylesheet" href="../css/animate.min.css">
+		<link rel="stylesheet" href="../css/bootstrap.min.css">
+		<link rel="stylesheet" href="../css/font-awesome.min.css">
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="../css/templatemo-style.css">
+    	<!--css file end -->
+
+        <!-- script file start -->
+        <script src="../js/jquery.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
+        <script src="../js/jquery.singlePageNav.min.js"></script>
+		<script src="../js/typed.js"></script>
+		<script src="../js/wow.min.js"></script>
+		<script src="../js/custom.js"></script>
+    	<!--script file end -->
+		
+	</head>
+	<body id="top">
+
+		<!-- start preloader -->
+		<%-include ('loader.ejs') %>
+    	<!-- end preloader -->
+
+         <!-- start header -->
+        <%-include ('header.ejs') %>
+         <!-- end header -->
+
+    	<!-- start navigation -->
+
+<nav class="navbar navbar-default" role="navigation">
+	<div class="container">
+		<div class="navbar-header">
+			<button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+				<span class="icon icon-bar"></span>
+				<span class="icon icon-bar"></span>
+				<span class="icon icon-bar"></span>
+			</button>
+			<a href="/" class="navbar-brand">Awesome</a>
+		</div>
+		<div class="collapse navbar-collapse">
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="/admin">ADMIN HOME</a></li>
+				<li><a href="/admin/manageuser">MANAGEUSERS</a></li>
+				<li><a href="/login">LOGOUT</a></li>
+				
+			</ul>
+		</div>
+	</div>
+  </nav>
+  <!-- end navigation -->
+  <font color="white">Welcome admin : <br /><%= sunm %> </font>
+
+    	<!-- start contact -->
+<section id="contact">
+	<div class="container">
+        
+		<div class="row">
+			<h1>Change Password!!!</h1>
+			<font color="blue"><%= output %></font>
+    <form method="post" action="/admin/cpadmin">
+        <div class="form-group">
+            <label>Old Password</label>
+            <input type="text" class="form-control" name="opass" >
+        </div>
+        <div class="form-group">
+          <label>New Password</label>
+          <input type="text" class="form-control" name="npass" >
+        </div>
+        <div class="form-group">
+            <label>Confirm New Password</label>
+            <input type="text" class="form-control" name="cnpass" >
+        </div>
+        <button type="submit" class="btn btn-success">Change</button>
+      </form>    
+		</div>
+	</div>
+</section>
+<!-- end contact -->
+
+    	<!-- start copyright -->
+        <%-include ('copyright.ejs')%>
+        <!-- end copyright -->
+
+	</body>
+</html>

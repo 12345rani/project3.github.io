@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<!-- 
+        Awesome Template
+        http://www.templatemo.com/preview/templatemo_450_awesome
+        -->
+		<title>Awesome Responsive Website</title>
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<!-- css file start -->
+		<link rel="stylesheet" href="../css/animate.min.css">
+		<link rel="stylesheet" href="../css/bootstrap.min.css">
+		<link rel="stylesheet" href="../css/font-awesome.min.css">
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="../css/templatemo-style.css">
+    	<!--css file end -->
+
+        <!-- script file start -->
+        <script src="../js/jquery.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
+        <script src="../js/jquery.singlePageNav.min.js"></script>
+		<script src="../js/typed.js"></script>
+		<script src="../js/wow.min.js"></script>
+		<script src="../js/custom.js"></script>
+    	<!--script file end -->
+		
+        <style>
+            #a{
+                /*background-color: pink;*/
+                width: 100%;
+                height: 500px;
+                top:200px;
+                position: absolute;
+            }
+            </style>
+	</head>
+	<body id="top">
+
+		<!-- start preloader -->
+		<%-include ('loader.ejs') %>
+    	<!-- end preloader -->
+
+         <!-- start header -->
+        <%-include ('header.ejs') %>
+         <!-- end header -->
+
+    	<!-- start navigation -->
+		
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon icon-bar"></span>
+                <span class="icon icon-bar"></span>
+                <span class="icon icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">Awesome</a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/admin">ADMIN HOME</a></li>
+                <li><a href="/admin/manageuser">MANAGEUSERS</a></li>
+                <li><a href="/login">LOGOUT</a></li>
+             </ul>
+        </div>
+        
+    </div>
+</nav>
+
+<!-- end navigation -->
+
+<font color="white">Welcome admin : <br /><%= sunm %> </font><hr>
+       <table class="table table-bordered">
+        <tr>
+            
+            <td>Id</td>
+            <td>Name</td>
+            <td>EmailId</td>
+            <td>Mobile</td>
+            <td>Address</td>
+            <td>city</td>
+            <td>Info</td>
+            <td>Gender</td>
+            <td>Status</td>
+            <td>Action</td>
+        </tr>
+        <% for(let row of result) {%>
+        <tr>
+            
+            <td><%= row._id %></td>
+            <td><%= row.name %></td>
+            <td><%= row.email %></td>
+            <td><%= row.mobile %></td>
+            <td><%= row.address %></td>
+            <td><%= row.city %></td>
+            <td><%= row.info %></td>
+            <td><%= row.gender %></td>
+            <td>
+                <% if(row.status) { %>
+                  <a title="Block User" href="/admin/manageuserstatus?regid=<%= row._id %>&s=block"><img src="../images/block.png" width="30" height="30" ></a>
+                 <% } else { %>
+                 <a title="Verify User" href="/admin/manageuserstatus?regid=<%= row._id %>&s=verify"><img src="../images/unblock.png" width="30" height="30" ></a>
+                  <% } %>
+            </td>
+            <td><a title="Delete User" href="/admin/manageuserstatus?regid=<%= row._id %>&s=delete"><img src="../images/delete.png" width="30" height="30" ></a></td>
+        </tr>    
+        <% } %>
+       </table>
+
+        <!-- start copyright -->
+        <%-include ('copyright.ejs')%>
+        <!-- end copyright -->
+
+	</body>
+</html>
